@@ -117,6 +117,7 @@
             href="https://github.com/LeftValues/leftvalues.github.io">GitHub Page</a>.</p>
     <hr />
     <canvas id="banner" width=800 height=1000 style="font-family:Montserrat"></canvas>
+	<button class="button" id="download" style="background-color: #2196f3;">Save Image</button> <br>
     <button data-i18n="result_back" class="button" onclick="location.href='index.html';"
         style="background-color: #2196f3;">Back</button> <br>
     <!-- Privacy respecting Statcounter code for LeftValues http://leftvalues.github.io -->
@@ -296,8 +297,10 @@
 
             const c = document.getElementById('banner')
             const ctx = c.getContext('2d')
+			const download = document.getElementById('download')
             ctx.fillStyle = '#EEEEEE'
             ctx.fillRect(0, 0, 800, 1000)
+			
 
             let img = document.getElementById('img-revolution')
             ctx.drawImage(img, 20, 170, 100, 100)
@@ -428,6 +431,13 @@
             ctx.fillText('' + document.getElementById('e-label').innerHTML, 400, 655)
             ctx.fillText('' + document.getElementById('f-label').innerHTML, 400, 775)
             ctx.fillText('' + document.getElementById('g-label').innerHTML, 400, 895)
+			download.addEventListener('click', function(e) {
+  console.log(banner.toDataURL());
+  const link = document.createElement('a');
+  link.download = 'LST Result.png';
+  link.href = banner.toDataURL();
+  link.click();
+  link.delete;})
         })
     </script>
 </body>
