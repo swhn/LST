@@ -436,6 +436,7 @@
   const link = document.createElement('a');
   link.download = 'LST Result.png';
   link.href = banner.toDataURL();
+  window.open(banner.toDataURL("image/png"), '_blank');
   link.click();
   link.delete;})
         })
