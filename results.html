@@ -117,7 +117,7 @@
             href="https://github.com/LeftValues/leftvalues.github.io">GitHub Page</a>.</p>
     <hr />
     <canvas id="banner" width=800 height=1000 style="font-family:Montserrat"></canvas>
-	<button class="button" id="download" style="background-color: #2196f3; " target="_blank">Save Image</button> <br>
+	<button class="button" id="download" style="background-color: #2196f3; " target="_blank">Save Image</button><p><br>Save button is not woking on Facebook Browser, Try *open in brower* and click save button.</p> <br>
     <button data-i18n="result_back" class="button" onclick="location.href='index.html';"
         style="background-color: #2196f3;">Back</button> <br>
     <!-- Privacy respecting Statcounter code for LeftValues http://leftvalues.github.io -->
@@ -436,7 +436,6 @@
   const link = document.createElement('a');
   link.download = 'LST Result.png';
   link.href = banner.toDataURL();
-  window.open(banner.toDataURL("image/png"), '_blank');
   link.click();
   link.delete;})
         })
