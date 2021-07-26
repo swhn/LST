@@ -82,9 +82,9 @@ const i18n = {
     }
     console.log(`using fallback for ${name}`)
     if (parameters) {
-      return replace(i18n.l10n.en[name], parameters)
+      return replace(i18n.l10n.my[name], parameters)
     }
-    return replace(i18n.l10n.en[name])
+    return replace(i18n.l10n.my[name])
   },
   lang: userLang,
   l10n: {}
@@ -109,7 +109,7 @@ const addLanguage = (code, properties) => {
 }
 
 const getl10n = async (code) => {
-  const url = `/lang/lang_${code}.json`
+  const url = `/LST/lang/lang_${code}.json`
   await window.fetch(url)
     .then(res => res.json())
     .then(out => addLanguage(code, out))
@@ -118,18 +118,8 @@ const getl10n = async (code) => {
 
 async function loadTranslation () { // eslint-disable-line no-unused-vars
   return Promise.all([
-    getl10n('en'),
-    getl10n('es'),
-    getl10n('de'),
-    getl10n('cn'),
-    getl10n('ko'),
-    getl10n('pt'),
-    getl10n('ru'),
-    getl10n('sh'),
-    getl10n('pl'),
-    getl10n('fr'),
-    getl10n('ja'),
-    getl10n('cs')
+  getl10n('my'),
+   
   ]).then(() => {
     console.log(i18n)
 
